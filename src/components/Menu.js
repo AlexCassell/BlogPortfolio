@@ -1,38 +1,25 @@
-import React from 'react'
+import React from "react";
 import Link from "gatsby-link";
+// import { Button } from 'reactstrap';
 
-// Import typefaces
-import 'typeface-montserrat'
-import 'typeface-merriweather'
 
-import profilePic from './profile-pic.jpg'
-import { rhythm } from '../utils/typography'
+const Menu = props =>
+  <li style={{ display: `inline-block`, marginRight: `1rem` }}>
+    <Link to={props.to}>
+      {props.children}
+    </Link>
+  </li>
 
-class Menu extends React.Component {
-  render() {
-    return (
-      <div
-        style={{
-          display: 'flex',
-          marginBottom: rhythm(2.5),
-        }}
-      >
-        <img
-          src={profilePic}
-          alt={`Kyle Mathews`}
-          style={{
-            marginRight: rhythm(1 / 2),
-            marginBottom: 0,
-            width: rhythm(2),
-            height: rhythm(2),
-          }}
-        />
-        <div>
-        <ListLink to="/">Home</ListLink>
-        </div>
-      </div>
-    )
-  }
-}
-
-export default Menu
+export default ({ children }) =>
+  <div style={{ position: 'fixed', top: `0`, right: '0', maxWidth: 650, padding: `1.25rem 1rem` }}>
+    <header style={{ marginBottom: `1.5rem` }}>
+      <Link to="/" style={{ textShadow: `none`, backgroundImage: `none`,textDecoration: 'none'}}>
+      </Link>
+      <ul style={{ listStyle: `none`, float: `right` }}>
+        <Menu to="/">Home</Menu>
+        <Menu to="/about/">About</Menu>
+        <Menu to="/projects/">Projects</Menu>
+        <Menu to="/contact/">Contact</Menu>
+      </ul>
+    </header>
+  </div>
