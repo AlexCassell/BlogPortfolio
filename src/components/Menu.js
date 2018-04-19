@@ -18,6 +18,7 @@ export default ({ children }) =>
       <ul style={{ listStyle: `none`, float: `right` }}>
         <Menu to="/">Home</Menu>
         <Menu to="/about/">About</Menu>
+        <Menu to="/unity/">Unity</Menu>
         <Menu to="/projects/">Projects</Menu>
         <Menu to="/contact/">Contact</Menu>
       </ul>
