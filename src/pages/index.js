@@ -5,7 +5,9 @@ import Helmet from 'react-helmet'
 
 import Bio from '../components/Bio'
 import Menu from '../components/Menu'
+import TreeExample from '../components/LeftSideBar'
 import { rhythm } from '../utils/typography'
+
 
 class BlogIndex extends React.Component {
   render() {
@@ -17,6 +19,7 @@ class BlogIndex extends React.Component {
         <Helmet title={siteTitle} />
         <Menu />
         <Bio />
+        <TreeExample />
         {posts.map(({ node }) => {
           const title = get(node, 'frontmatter.title') || node.fields.slug
           return (
