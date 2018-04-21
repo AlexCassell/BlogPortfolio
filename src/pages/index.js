@@ -5,22 +5,42 @@ import Helmet from 'react-helmet'
 
 import Bio from '../components/Bio'
 import Menu from '../components/Menu'
-import TreeExample from '../components/LeftSideBar'
+import LeftSideBar from '../components/LeftSideBar'
 import { rhythm } from '../utils/typography'
 
-
 class BlogIndex extends React.Component {
+  constructor(props) {
+    super(props)
+    this.state = { posts: get(this, 'props.data.allMarkdownRemark.edges') }
+  }
+
+  componentWillMount = e => {
+    this.handleShowBlogOnly()
+  }
+
+  handleShowBlogOnly = () => {
+    this.setState = { posts: get(this, 'props.data.allMarkdownRemark.edges') }
+    for (let i = 0; i < this.state.posts.length; i++) {
+      if (this.state.posts[i].node.frontmatter.postType === 'index') {
+        console.log(this.state.posts[i])
+        this.setState = { posts: this.state.posts.splice(i, 1) }
+      } else {
+        console.log(this.state.posts[i])
+      }
+    }
+  }
+
   render() {
     const siteTitle = get(this, 'props.data.site.siteMetadata.title')
-    const posts = get(this, 'props.data.allMarkdownRemark.edges')
-
+    // posts = get(this, 'props.data.allMarkdownRemark.edges')
+    console.log(this.state.posts)
     return (
       <div>
         <Helmet title={siteTitle} />
         <Menu />
         <Bio />
-        <TreeExample />
-        {posts.map(({ node }) => {
+        <LeftSideBar />
+        {this.state.posts.map(({ node }) => {
           const title = get(node, 'frontmatter.title') || node.fields.slug
           return (
             <div key={node.fields.slug}>
@@ -60,6 +80,7 @@ export const pageQuery = graphql`
             slug
           }
           frontmatter {
+            postType
             date(formatString: "DD MMMM, YYYY")
             title
           }
