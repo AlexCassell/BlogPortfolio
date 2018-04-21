@@ -1,5 +1,3 @@
-'use strict'
-
 import React from 'react'
 import ReactDOM from 'react-dom'
 import { Treebeard } from 'react-treebeard'
@@ -33,14 +31,15 @@ const data = {
     {
       name: 'projects',
       children: [
-        { 
+        {
           name: 'react',
           children: [],
-        }, 
+        },
         {
           name: 'unity',
-          children: [], 
-        }],
+          children: [],
+        },
+      ],
     },
   ],
 }
@@ -85,12 +84,8 @@ class LeftSideBar extends React.Component {
           Directory
         </div>
         <Treebeard data={data} onToggle={this.onToggle} />
-        Not fully implemented.
       </div>
     )
   }
 }
-
-// const content = document.getElementById('content');
-// ReactDOM.render(<TreeExample/>, content);
 export default LeftSideBar

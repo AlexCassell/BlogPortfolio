@@ -61,12 +61,14 @@ class Template extends React.Component {
       <Container
         style={{
           maxWidth: rhythm(24),
+          // backgroundColor:'#990000',
           padding: `${rhythm(1.5)} ${rhythm(3 / 4)}`,
         }}
       >
         {header}
         {children()}
       </Container>
+
     )
   }
 }

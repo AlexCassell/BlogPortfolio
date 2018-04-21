@@ -4,7 +4,7 @@ import React from 'react'
 import 'typeface-montserrat'
 import 'typeface-merriweather'
 
-import profilePic from './images/profile-pic.jpg'
+import profilePic from './images/under-construction.png'
 import { rhythm } from '../utils/typography'
 
 class Bio extends React.Component {
@@ -18,7 +18,7 @@ class Bio extends React.Component {
       >
         <img
           src={profilePic}
-          alt={`Alex Cassell`}
+          alt={`Under Construction`}
           style={{
             marginRight: rhythm(1 / 2),
             marginBottom: 0,
@@ -27,9 +27,9 @@ class Bio extends React.Component {
           }}
         />
         <p>
-          <strong>Alex Cassell</strong> is a software engineer and technology enthusiast.{' '}
-          <a href="https://twitter.com/pseudojourney">
-            You should follow him on Twitter
+          <strong>Under Construction</strong> I am currently rebuilding this website with Gatsby/React; you can see my old portfolio at:{' '}
+          <a href="https://alexcassell.com/oldPortfolio">
+            https://alexcassell.com/oldPortfolio
           </a>
         </p>
       </div>
