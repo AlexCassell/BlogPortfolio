@@ -4,10 +4,10 @@ import React from 'react'
 import 'typeface-montserrat'
 import 'typeface-merriweather'
 
-import profilePic from './images/profile-pic.jpg'
+import profilePic from './images/under-construction.png'
 import { rhythm } from '../utils/typography'
 
-class Bio extends React.Component {
+class Announcement extends React.Component {
   render() {
     return (
       <div
@@ -27,9 +27,9 @@ class Bio extends React.Component {
           }}
         />
         <p>
-          <strong>Alex Cassell</strong> is a web developer and game creator.{' '}
-          <a href="https://twitter.com/pseudojourney">
-            You should follow him on twitter.
+        <strong>Under Construction</strong> I am currently rebuilding this website with Gatsby/React; you can see my old portfolio at:{' '}
+          <a href="https://alexcassell.com/oldPortfolio">
+            https://alexcassell.com/oldPortfolio
           </a>
         </p>
       </div>
@@ -37,4 +37,4 @@ class Bio extends React.Component {
   }
 }
 
-export default Bio
+export default Announcement
